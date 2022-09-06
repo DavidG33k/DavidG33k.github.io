@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import { LayoutComponent } from './theme/layout/layout.component';
 
 const routes: Routes = [
@@ -17,6 +17,11 @@ const routes: Routes = [
         loadChildren: () => import('./view/view.module').then(module => module.ViewModule)
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: '/theme/view',
+    pathMatch: 'full'
   }
 ];
 
@@ -24,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
