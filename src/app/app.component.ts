@@ -12,7 +12,7 @@ export class AppComponent  {
   constructor(private router: Router) {
     this.router.events.subscribe(routerEvent => {
         if (routerEvent instanceof NavigationStart) {
-            if (routerEvent.url == "/") {
+            if (routerEvent.url != "/theme/view") {
                 this.router.navigate(["theme/view"], {skipLocationChange: true})
             }
         }
