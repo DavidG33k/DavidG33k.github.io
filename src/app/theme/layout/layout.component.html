@@ -12,7 +12,7 @@
 <header *ngIf="this.themeConfig.theme === 'horizontal'" [ngClass]="desktopHeaderClass" (window:resize)="onResize($event)">
   <div class="container">
     <nav class="navbar navbar-expand-lg" [ngClass]="horizontalNavClass">
-      <a class="navbar-brand" routerLink="/">
+      <a class="navbar-brand">
         <img [src]="desktopLogo" alt="Bolby" />
       </a>
       <button (click)="collapsedCardToggle()" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
@@ -32,15 +32,18 @@
               <span *ngIf="this.themeConfig.theme !== 'collapsed'">About</span>
             </a>
           </li>
-          <li class="nav-item" [ngClass]="{'active': currentSection === 'blog'}" (click)="scrollTo('blog')">
-            <a href="javascript:" class="nav-link" [ngClass]="{'active': currentSection === 'blog'}">
-              <i *ngIf="this.themeConfig.theme !== 'horizontal'" class="icon-note"></i>
-              <span *ngIf="this.themeConfig.theme !== 'collapsed'">Blog</span>
+          <li [ngClass]="{'active': currentSection === 'incoming-works'}" (click)="scrollTo('incoming-works')">
+            <a href="javascript:" class="nav-link" [ngClass]="{'active': currentSection === 'incoming-works'}"><i class="icon-note"></i>
+              <span *ngIf="this.themeConfig.theme !== 'collapsed'">Incoming works</span>
             </a>
           </li>
-          <li class="nav-item" [ngClass]="{'active': currentSection === 'contact'}" (click)="scrollTo('contact')">
-            <a href="javascript:" class="nav-link" [ngClass]="{'active': currentSection === 'contact'}">
-              <i *ngIf="this.themeConfig.theme !== 'horizontal'" class="icon-bubbles"></i>
+          <li [ngClass]="{'active': currentSection === 'works'}" (click)="scrollTo('works')">
+            <a href="javascript:" class="nav-link" [ngClass]="{'active': currentSection === 'works'}"><i class="icon-layers"></i>
+              <span *ngIf="this.themeConfig.theme !== 'collapsed'">Works</span>
+            </a>
+          </li>
+          <li [ngClass]="{'active': currentSection === 'contact'}" (click)="scrollTo('contact')">
+            <a href="javascript:" class="nav-link" [ngClass]="{'active': currentSection === 'contact'}"><i class="icon-bubbles"></i>
               <span *ngIf="this.themeConfig.theme !== 'collapsed'">Contact</span>
             </a>
           </li>
@@ -54,9 +57,7 @@
 
   <!-- logo image -->
   <div class="site-logo">
-    <a routerLink="/">
       <img [src]="desktopLogo" width="90"/>
-    </a>
   </div>
 
   <!-- main menu -->
