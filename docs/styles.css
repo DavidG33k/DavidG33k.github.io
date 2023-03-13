@@ -1,12 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic);
+@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500);
 @charset "UTF-8";
 /* You can add global styles to this file, and also import other style files */
-/*!
- * Bootstrap v4.6.2 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 html.lb-disable-scrolling {
   overflow: hidden;
 }
@@ -1607,6 +1602,21 @@ html.lb-disable-scrolling {
 @font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;src:url('fa-solid-900.eot');src:url('fa-solid-900.eot?#iefix') format("embedded-opentype"),url('fa-solid-900.woff2') format("woff2"),url('fa-solid-900.woff') format("woff"),url('fa-solid-900.ttf') format("truetype"),url('fa-solid-900.svg#fontawesome') format("svg")}
 .fa,.far,.fas{font-family:"Font Awesome 5 Free"}
 .fa,.fas{font-weight:900}
+*, body, html {
+  box-sizing: border-box;
+  font-family: JetBrains Mono, monospace;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+/*!
+ * Bootstrap v4.6.2 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -13987,6 +13997,41 @@ ng-image-slider {
     height: auto;
     min-height: auto;
     padding: 100px 0;
+  }
+}
+/***** BINARY TEXT EFFECT *****/
+.binaryscroll {
+  width: 100%;
+  padding: 0px 64px;
+}
+.binaryscroll:after {
+  animation: customscroll 1s linear infinite;
+  content: "01001110 01101111 01000101 01100001 01110011 01110100 01100101 01110010 01100101 01100111 01100111 01110011 01011001 01100101 01110100 00100000 01001110 01101111 01000101 01100001 01110011 01110100 01100101 01110010 01100101 01100111 01100111 01110011 01011001 01100101 01110100 00100000 01001110 01101111 01000101 01100001 01110011 01110100 01100101 01110010 01100101 01100111 01100111 01110011 01011001 01100101 01110100";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #353353;
+  font-size: 12px;
+  pointer-events: none;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  opacity: 0.8;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, black 20%, black 80%, rgba(0, 0, 0, 0) 95%);
+          mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, black 20%, black 80%, rgba(0, 0, 0, 0) 95%);
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 200;
+}
+@keyframes customscroll {
+  25% {
+    content: "01010111 01101000 01100001 01110100 01000001 01000011 01110101 01110010 01101001 01101111 01110101 01110011 01000010 01101111 01111001 00100001 01010111 01101000 01100001 01110100 01000001 01000011 01110101 01110010 01101001 01101111 01110101 01110011 01000010 01101111 01111001 00100001 01010111 01101000 01100001 01110100 01000001 01000011 01110101 01110010 01101001 01101111 01110101 01110011 01000010 01101111 01111001 00100001";
+  }
+  50% {
+    content: "01001110 01101111 01000101 01100001 01110011 01110100 01100101 01110010 01100101 01100111 01100111 01110011 01011001 01100101 01110100 00100000 01001110 01101111 01000101 01100001 01110011 01110100 01100101 01110010 01100101 01100111 01100111 01110011 01011001 01100101 01110100 00100000 01001110 01101111 01000101 01100001 01110011 01110100 01100101 01110010 01100101 01100111 01100111 01110011 01011001 01100101 01110100";
+  }
+  75% {
+    content: "01010111 01101000 01100001 01110100 01000001 01000011 01110101 01110010 01101001 01101111 01110101 01110011 01000010 01101111 01111001 00100001 01010111 01101000 01100001 01110100 01000001 01000011 01110101 01110010 01101001 01101111 01110101 01110011 01000010 01101111 01111001 00100001 01010111 01101000 01100001 01110100 01000001 01000011 01110101 01110010 01101001 01101111 01110101 01110011 01000010 01101111 01111001 00100001";
   }
 }
 
